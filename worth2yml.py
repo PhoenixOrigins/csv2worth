@@ -7,9 +7,10 @@ def main():
 	for x in ecolines:
 	  line = x
 	  comma_index = line.find(",")
-	  item = line[:comma_index]
-	  worth = line[comma_index + 1:]
-	  worthfile.write("%s: %s" % (item.upper(), worth))
+	  if comma_index != -1:
+	    item = line[:comma_index]
+	    worth = line[comma_index + 1:]
+	    worthfile.write("%s: %s" % (item.upper(), worth))
 	worthfile.close()
 
 if __name__ == "__main__":
